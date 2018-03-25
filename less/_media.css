@@ -1,0 +1,47 @@
+.tsp-landing {
+  /*min*/
+}
+@media (max-width: 1366px) {
+}
+@media (max-width: 1270px) {
+  .tsp-landing .profit-people__bg {
+    background: url(../img/images/tsp/img_3.jpg) 50% 0 no-repeat;
+  }
+}
+@media (max-width: 1269px) {
+  .tsp-landing .exposition__isometric {
+    text-align: right;
+    width: 120%;
+    right: -10%;
+    position: relative;
+  }
+  .tsp-landing .exposition__isometric .isometric__layer-2,
+  .tsp-landing .exposition__isometric .isometric__layer-3 {
+    left: 33px!important;
+  }
+}
+@media (max-width: 1240px) {
+  .tsp-landing .header__title-stripe {
+    width: 76px;
+  }
+}
+@media (max-width: 1120px) {
+  .tsp-landing .exposition__title {
+    margin-left: -6px;
+    line-height: 0.87;
+  }
+  .tsp-landing .profit-list__item-text_you span {
+    font-size: 22px;
+    line-height: 1.36;
+  }
+}
+@media (max-width: 992px) {
+  .tsp-landing .tsp-landing {
+    min-width: 992px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1270px) {
+  .tsp-landing .container {
+    width: 90% !important;
+  }
+}

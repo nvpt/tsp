@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="553px" height="359px" viewBox="0 0 553 359" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Laptop</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M47.0334165,144.794535 C45.0565994,131.694827 54.1178206,122.459947 67.2588437,124.166117 L410.341418,168.710375 C428.967002,171.128635 448.704519,187.588297 454.425348,205.470779 L522.079803,416.948789 C527.801102,434.832739 517.289822,450.81308 498.540855,451.685538 C498.540855,451.685538 495.947109,453.879332 481.097867,450.343798 C466.248624,446.808265 468.969242,436.428332 465.532292,436.230868 C461.43351,435.99538 430.735045,432.664852 430.735045,432.664852 L160.911222,381.861124 C142.459622,378.386968 122.285023,361.264633 115.853064,343.625744 L55.8683618,179.124744 C55.8683618,179.124744 50.8459786,164.393505 48.9715344,155.628587 C47.0970903,146.863669 47.0334165,144.794535 47.0334165,144.794535 Z" id="path-1"></path>
+        <filter x="-0.6%" y="-0.9%" width="101.3%" height="103.7%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.333333333   0 0 0 0 0.309803922   0 0 0 0 0.525490196  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <path d="M50.7423586,141.644012 C46.2969922,127.986718 54.2336126,118.470372 68.4585836,120.387215 L409.013384,166.27765 C427.623123,168.78535 447.31819,185.327136 453.003732,203.225347 L520.004569,414.145445 C525.690029,432.043396 515.31469,443.836652 496.838451,440.487843 L159.605475,379.364536 C141.125722,376.01509 121.434199,358.827292 115.623281,340.974676 L50.7423586,141.644012 Z" id="path-3"></path>
+        <filter x="-0.7%" y="-1.0%" width="101.3%" height="103.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.839215686   0 0 0 0 0.831372549   0 0 0 0 0.921568627  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-5" points="5.68434189e-14 184.711832 275.051147 0 465.246089 99.6857504 210.990982 293.304995"></polygon>
+        <ellipse id="path-7" cx="134.886946" cy="381.337113" rx="13.6550215" ry="8.30714587"></ellipse>
+        <filter x="-3.7%" y="-18.1%" width="107.3%" height="124.1%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="-2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.502378668   0 0 0 0 0.47489933   0 0 0 0 0.793659651  0 0 0 0.885926178 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Isometric" transform="translate(-6.000000, -190.000000)">
+            <g id="Laptop" transform="translate(0.000000, 82.000000)">
+                <g id="Obiem" transform="translate(285.200872, 288.160686) rotate(-225.000000) translate(-285.200872, -288.160686) " fill-opacity="1" fill="black">
+                    <use filter="url(#filter-2)" xlink:href="#path-1"></use>
+                </g>
+                <g id="Ramka" transform="translate(285.534467, 280.598943) rotate(-225.000000) translate(-285.534467, -280.598943) " fill-opacity="1" fill="black">
+                    <use filter="url(#filter-4)" xlink:href="#path-3"></use>
+                </g>
+                <polygon id="Shadow_screen" fill-opacity="0.700634058" fill="#5F629D" points="46.3150888 314.501471 323.13117 128.702148 515.903846 228.8 262.461538 418.022059"></polygon>
+                <g id="Path-7" transform="translate(48.080024, 130.656770)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Mask" fill="#BBB6E5" xlink:href="#path-5"></use>
+                </g>
+                <g id="Button">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                    <use fill="#9B96D0" fill-rule="evenodd" xlink:href="#path-7"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

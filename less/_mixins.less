@@ -1,0 +1,280 @@
+.clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+img.vertical-fix {
+	display: inline!important;
+	width: 0!important;
+	height: 100% !important;
+	font-size: 0!important;
+	opacity: 0!important;
+}
+
+/*centring*/
+.ch {
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.cv {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.cvh {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	-moz-transform: translateY(-50%) translateX(-50%);
+	-ms-transform: translateY(-50%) translateX(-50%);
+	-o-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
+}
+
+.centered-wrapper {
+	display: table;
+	table-layout: fixed;
+}
+
+/*links*/
+.hfa(@color:@c-f) {
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: @color;
+	}
+}
+
+.hfa(bg; @bg-color) {
+	&:hover,
+	&:focus,
+	&:active {
+		background-color: @bg-color;
+	}
+}
+
+.hfa(out; @out: none) {
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: @out;
+	}
+}
+
+.hfa(b1; @border-color: @c-f) {
+
+	&:hover,
+	&:focus,
+	&:active {
+		border: 1px solid @border-color;
+	}
+}
+
+.hfa(b2; @border-color: @c-f) {
+
+	&:hover,
+	&:focus,
+	&:active {
+		border: 2px solid @border-color;
+	}
+}
+
+.tdn() {
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none !important;
+		text-decoration: none;
+	}
+}
+
+/*text*/
+.lh(@line-height) {
+	line-height: @line-height;
+}
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+
+.text-shadow(@params) {
+	text-shadow: @params;
+}
+
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow: @string;
+	box-shadow: @string;
+}
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	box-sizing: @type;
+}
+
+/*border radius*/
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+	-webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+
+	-moz-border-radius: @topleft @topright @bottomright @bottomleft;
+
+	border-radius: @topleft @topright @bottomright @bottomleft;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+
+/*bg-decoration*/
+.opacity (@opacity: 0.5) {
+	-moz-opacity: @opacity;
+	opacity: @opacity;
+}
+
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+	background-image: -moz-linear-gradient(left, @startColor, @endColor);
+	background-image: -ms-linear-gradient(left, @startColor, @endColor);
+	background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+/*animation*/
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation: @name @duration @delay @ease;
+}
+
+.transition (@transition, @time) {
+	-webkit-transition: @transition @time;
+	-moz-transition: @transition @time;
+	-o-transition: @transition @time;
+	transition: @transition @time;
+}
+
+.transform(@string) {
+	-webkit-transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+	transform: @string;
+}
+
+.scale (@factor) {
+	-webkit-transform: scale(@factor);
+	-moz-transform: scale(@factor);
+	-ms-transform: scale(@factor);
+	-o-transform: scale(@factor);
+}
+
+.rotate (@deg) {
+	-webkit-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-o-transform: rotate(@deg);
+}
+
+.skew (@deg, @deg2) {
+	-webkit-transform: skew(@deg, @deg2);
+	-moz-transform: skew(@deg, @deg2);
+	-ms-transform: skew(@deg, @deg2);
+	-o-transform: skew(@deg, @deg2);
+}
+
+.translate (@x, @y:0) {
+	-webkit-transform: translate(@x, @y);
+	-moz-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+	-o-transform: translate(@x, @y);
+}
+
+.translate3d (@x, @y: 0, @z: 0) {
+	-webkit-transform: translate3d(@x, @y, @z);
+	-moz-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+	-o-transform: translate3d(@x, @y, @z);
+}
+
+.perspective (@value: 1000) {
+	-webkit-perspective: @value;
+	-moz-perspective: @value;
+	perspective: @value;
+}
+
+.transform-origin (@x:center, @y:center) {
+	-webkit-transform-origin: @x @y;
+	-moz-transform-origin: @x @y;
+	-ms-transform-origin: @x @y;
+	-o-transform-origin: @x @y;
+}
+
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments();
+	}
+	@-webkit-keyframes @name { @arguments();
+	}
+	@keyframes @name { @arguments();
+	}
+}
+
+/*filter blur*/
+.blur(@blur:3px) {
+	filter: blur(@blur); // someday, sigh ...
+	-webkit-filter: blur(@blur); // prefixed CSS3 blur filters
+	//-moz-filter: blur(@blur);
+	//-o-filter: blur(@blur);
+	-ms-filter: blur(@blur);
+	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+}

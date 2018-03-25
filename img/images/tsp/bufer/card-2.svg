@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="206" height="252" viewBox="0 0 206 252">
+    <defs>
+        <path id="b" d="M0 0h206v252H0z"/>
+        <filter id="a" width="108.3%" height="106.7%" x="-4.1%" y="-2.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.296535326 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
+        <g transform="translate(0 .59)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#7870BD" xlink:href="#b"/>
+            <rect width="53.672" height="53.672" x="76.247" y="70.068" fill="#14E1A8" rx="26.836" transform="rotate(45 103.083 96.904)"/>
+        </g>
+        <rect width="131" height="15" x="40" y="150" fill="#FFF" fill-opacity=".985" rx="4"/>
+        <path stroke="#FFF" stroke-linecap="square" d="M14.5 187.5h171.747M100.5 230.69V188.5" opacity=".3"/>
+        <g transform="translate(23 206)">
+            <rect width="46" height="7" fill="#FFF" fill-opacity=".985" opacity=".83" rx="3"/>
+            <rect width="46" height="15" y="13" fill="#423D6F" opacity=".6" rx="3"/>
+        </g>
+        <g transform="translate(142 206)">
+            <rect width="46" height="7" fill="#FFF" fill-opacity=".985" opacity=".83" rx="3"/>
+            <rect width="46" height="15" y="13" fill="#423D6F" opacity=".6" rx="3"/>
+        </g>
+    </g>
+</svg>

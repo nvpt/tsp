@@ -1,0 +1,1911 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes">
+  <title>TSP</title>
+
+  <link rel="stylesheet" href="lib-static-js/bootstrap-custom-1240/css/bootstrap.css">
+  <link rel="stylesheet" href="lib-static-js/animate.css">
+
+  <link rel="stylesheet" href="lib/owl.carousel/dist/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="lib/normalize-css/normalize.css"><!--не подключать дефолтный  бутстрап !-->
+  <link rel="stylesheet" href="less/tsp.css"><!--при интеграции в галп пути поменять-->
+
+</head>
+<body>
+
+<div class="tsp-landing">
+
+  <header class="tsp-section header">
+
+    <div class="header__content">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-xs-offset-1 col-xs-11 col-sm-offset-1 col-sm-11 col-md-offset-1 col-md-11 col-lg-offset-1 col-lg-11">
+            <div class="title h1-title header__title">City Life</div>
+            <div class="header__title-stripe"></div>
+            <div class="header__slogan">
+              <span>Платформа</span> <br>
+              <span class="marked">для повышения</span> <br>
+              <span class="marked">лояльности</span> <span>клиентов</span>
+            </div>
+          </div>
+          <div
+            class="col-xs-offset-3 col-xs-8 col-sm-offset-3 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+            <div class="header__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_header">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="headerDots">
+
+                      <defs>
+                        <linearGradient x1="0%" y1="0%"
+                                        x2="100%" y2="100%"
+                                        gradientUnits="userSpaceOnUse"
+                                        id="headerDotsGradient">
+                          <stop stop-color="#17FCAC " offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#17FCAC; rgba(255,255,255,0);rgba(255,255,255,0); #17FCAC"
+                              fill="freeze"
+
+                              begin="0s; headerDotsGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="headerDotsGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="#55ECF9 " offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#55ECF9;  rgba(255,255,255,0);rgba(255,255,255,0); #55ECF9"
+                              fill="freeze"
+
+                              begin="headerDotsGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="headerDotsGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+
+                      </defs>
+                      <path
+                        fill="none"
+                        stroke="url(#headerDotsGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 1,1 L 1,50   L 50,50  L99,50 L 99,100">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="tsp-section exposition">
+    <div class="exposition__we">
+      <div class="container">
+        <div class="row">
+          <div class=" col-xs-6 col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5">
+
+
+            <div class="exposition__animation-1 animated invisible">
+              <div class="h2-title exposition__title exposition__title_we">Мы помогаем
+              </div>
+              <div class="text exposition__text">
+                <span class="marked marked_lightgreen">привлекать и удерживать клиентов</span><br>
+                <span>с помощью своего уникального</span><br>
+                <span>технического решения.</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+            <div class="exposition__isometric">
+              <div class="isometric">
+                <img src="img/images/tsp/Teremok.svg" alt="" class="isometric__layer-1">
+                <img src="img/images/tsp/Screen.svg" alt="" class="isometric__layer-2">
+                <img src="img/images/tsp/Pad.svg" alt="" class="isometric__layer-3">
+              </div>
+            </div>
+            <!--непрозрачная, с хвостом. до анимации - загрулшка-->
+
+
+          </div>
+
+          <div
+            class="col-xs-offset-2 col-xs-9 col-sm-offset-2 col-sm-9 col-md-offset-2 col-md-7 col-lg-offset-3 col-lg-6 ">
+
+
+            <div class="exposition__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_exposition">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         class="point point_1"
+                         preserveAspectRatio="xMidYMid">
+                      <defs>
+                        <animate
+                          xlink:href="#dotPoint_1"
+                          attributeName="fill-opacity"
+                          from="0"
+                          to="0"
+                          values="0;  1;  0"
+                          keyTimes="0;  0.5; 1"
+                          dur="1.5s"
+                          begin="0s; expositionDotsGradientFinish.end "
+                          repeatCount="1"
+                          fill="freeze">
+                        </animate>
+                        <animate
+                          xlink:href="#dotPoint_1"
+                          attributeName="stroke-opacity"
+                          from="0"
+                          to="0"
+                          values="0; 0; 0.4; 0; 0"
+                          keyTimes="0; 0.2; 0.4; 0.75; 1"
+                          dur="1.5s"
+                          begin="0s; expositionDotsGradientFinish.end "
+                          repeatCount="indefinite"
+                          fill="freeze">
+                        </animate>
+
+                      </defs>
+                      <circle id="dotPoint_1"
+                              class="dot-point dot-point_1"
+                              r="10"
+                              cx="143"
+                              cy="24"
+                              fill="#14e1a8"
+                              stroke="#14e1a8"
+                              stroke-width="17">
+                      </circle>
+                    </svg>
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="expositionDots">
+
+                      <defs>
+                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%"
+                                        id="expositionDotsGradient"
+                                        gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#0BE5F9 " stop-opacity="0.798431839"
+                                offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#0BE5F9; rgba(255,255,255,0);rgba(255,255,255,0); #0BE5F9"
+                              fill="freeze"
+
+                              begin="0s; expositionDotsGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="expositionDotsGradientStart">
+
+                            </animate>
+
+                          </stop>
+                          <stop stop-color="#742EFB " offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#742EFB;  rgba(255,255,255,0); #742EFB"
+                              fill="freeze"
+
+                              begin="expositionDotsGradientStart.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="expositionDotsGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+                      <path
+                        fill="none"
+                        stroke="url(#expositionDotsGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 74 1 L 74 48 L 1 50 L 1 100 ">
+                      </path>
+
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-xs-offset-1  col-xs-11 col-sm-offset-1  col-sm-11 col-md-offset-1  col-md-11 col-lg-offset-1  col-lg-11 ">
+            <div class="exposition__you animated invisible">
+              <div class="h2-title  exposition__title exposition__title_you">Вы
+                выпускаете
+              </div>
+              <div class="text exposition__text">
+                <span>свои</span> <span
+                class="marked marked_purple">карты лояльности с нашей технологией</span><br>
+                <span>и ваши клиенты получают выгодные предложения</span><br>
+                <span>в экосистеме City Life - онлайн-магазинах, салонах</span><br>
+                <span>красоты, на заправках и других заведениях.</span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsp-section card-look">
+    <div class="card-look__content">
+      <div class="container">
+        <div class="row">
+          <div class=" col-xs-6 col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 ">
+            <div class="card-look__steps">
+              <div class="steps-card">
+                <img src="img/images/tsp/card-techno.png" alt="" class="steps-card__card animated invisible">
+
+                <ul class="steps-card__steps">
+                  <li class="card-look__dots-wrap card-look__dots-wrap_high">
+                    <div class="path-response__wrap">
+                      <div class="path-response">
+                        <div
+                          class="path-response__container path-response__container_card-look_high">
+                          <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                               xmlns="http://www.w3.org/2000/svg"
+                               xmlns:xlink="http://www.w3.org/1999/xlink"
+                               preserveAspectRatio="none"
+                               id="cardLookDots_1">
+
+                            <defs>
+                              <linearGradient x1="0%" y1="0%" x2="0%"
+                                              y2="100%" gradientUnits="userSpaceOnUse"
+                                              id="cardLookDots_1Gradient">
+                                <stop stop-color="#0bf98b " offset="0%">
+
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#0bf98b; rgba(255,255,255,0);rgba(255,255,255,0); #0bf98b"
+                                    fill="freeze"
+
+                                    begin="0s; cardLookDots_1GradientFinish.end"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_1GradientStart">
+
+                                  </animate>
+                                </stop>
+                                <stop stop-color="#2ebffb " offset="100%">
+
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#2ebffb;  rgba(255,255,255,0); #2ebffb"
+                                    fill="freeze"
+
+                                    begin="cardLookDots_1GradientStart.begin + 0.5s"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_1GradientFinish">
+
+                                  </animate>
+                                </stop>
+                              </linearGradient>
+                            </defs>
+
+                            <path
+                              fill="none"
+                              stroke="url(#cardLookDots_1Gradient)"
+                              stroke-width="5"
+                              stroke-dasharray="1, 15"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              opacity="0.9"
+                              vector-effect="non-scaling-stroke"
+                              d="M 12,7  L 12,100">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="steps-card__animation-1 animated invisible">
+                    <img src="img/images/tsp/about-card-1.svg" alt="">
+                    <div class="steps-card__text">
+                      <span>Ваш логотип</span>
+                    </div>
+                  </li>
+                  <li class="card-look__dots-wrap">
+                    <div class="path-response__wrap">
+                      <div class="path-response">
+                        <div
+                          class="path-response__container path-response__container_card-look">
+                          <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                               xmlns="http://www.w3.org/2000/svg"
+                               xmlns:xlink="http://www.w3.org/1999/xlink"
+                               preserveAspectRatio="none"
+                               id="cardLookDots_2">
+
+                            <defs>
+                              <linearGradient x1="0%" y1="0%" x2="0%"
+                                              y2="100%" gradientUnits="userSpaceOnUse"
+                                              id="cardLookDots_2Gradient">
+                                <stop stop-color="#f9b60b " offset="0%">
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#f9b60b; rgba(255,255,255,0);rgba(255,255,255,0); #f9b60b"
+                                    fill="freeze"
+
+                                    begin="0s; cardLookDots_2GradientFinish.end"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_2GradientStart">
+
+                                  </animate>
+                                </stop>
+                                <stop stop-color="#2efbde " offset="100%">
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#2efbde;  rgba(255,255,255,0); #2efbde"
+                                    fill="freeze"
+
+                                    begin="cardLookDots_2GradientStart.begin + 0.5s"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_2GradientFinish">
+
+                                  </animate>
+                                </stop>
+                              </linearGradient>
+                            </defs>
+
+                            <path
+                              fill="none"
+                              stroke="url(#cardLookDots_2Gradient)"
+                              stroke-width="5"
+                              stroke-dasharray="1, 15"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              opacity="0.9"
+                              vector-effect="non-scaling-stroke"
+                              d="M 12,7  L 12,100">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="steps-card__animation-2 animated invisible">
+                    <img src="img/images/tsp/about-card-2.svg" alt="">
+                    <div class="steps-card__text">
+                      <div class="steps-card__text-inner">
+                        <span>Ваш фирменный</span> <br>
+                        <span>паттерн</span>
+                        <div class="card-look__dots-wrap card-look__dots-wrap_horizontal">
+                          <div class="path-response__wrap">
+                            <div class="path-response">
+                              <div
+                                class="path-response__container path-response__container_card-look">
+
+                                <svg version="1.1" width="100%" height="100%"
+                                     viewBox="0 0 100 100"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                     preserveAspectRatio="none"
+                                     id="cardLookDots_3">
+
+                                  <defs>
+                                    <linearGradient x1="0%" y1="0%" x2="0%"
+                                                    y2="100%"
+                                                    gradientUnits="userSpaceOnUse"
+                                                    id="cardLookDots_3Gradient">
+                                      <stop stop-color="#f9b60b "
+                                            offset="0%">
+                                        <animate
+                                          attributeName="stop-color"
+                                          values="#f9b60b; rgba(255,255,255,0);rgba(255,255,255,0); #f9b60b"
+                                          fill="freeze"
+
+                                          begin="0s; cardLookDots_3GradientFinish.end"
+                                          dur="1s"
+                                          repeatCount="1"
+                                          id="cardLookDots_3GradientStart">
+
+                                        </animate>
+                                      </stop>
+                                      <stop stop-color="#2efbde "
+                                            offset="100%">
+                                        <animate
+                                          attributeName="stop-color"
+                                          values="#2efbde;  rgba(255,255,255,0); #2efbde"
+                                          fill="freeze"
+
+                                          begin="cardLookDots_3GradientStart.begin + 0.5s"
+                                          dur="1s"
+                                          repeatCount="1"
+                                          id="cardLookDots_3GradientFinish">
+
+                                        </animate>
+                                      </stop>
+                                    </linearGradient>
+                                  </defs>
+
+                                  <path
+                                    fill="none"
+                                    stroke="url(#cardLookDots_3Gradient)"
+                                    stroke-width="5"
+                                    stroke-dasharray="1, 15"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    opacity="0.9"
+                                    vector-effect="non-scaling-stroke"
+                                    d="M 1,50  L 100,50">
+                                  </path>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </li>
+                  <li class="card-look__dots-wrap">
+                    <div class="path-response__wrap">
+                      <div class="path-response">
+                        <div
+                          class="path-response__container path-response__container_card-look">
+                          <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                               xmlns="http://www.w3.org/2000/svg"
+                               xmlns:xlink="http://www.w3.org/1999/xlink"
+                               preserveAspectRatio="none"
+                               id="cardLookDots_4">
+
+                            <defs>
+                              <linearGradient x1="0%" y1="0%" x2="0%"
+                                              y2="100%" gradientUnits="userSpaceOnUse"
+                                              id="cardLookDots_4Gradient">
+                                <stop stop-color="#f9b60b " offset="0%">
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#f9b60b; rgba(255,255,255,0);rgba(255,255,255,0); #f9b60b"
+                                    fill="freeze"
+
+                                    begin="0s; cardLookDots_4GradientFinish.end"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_4GradientStart">
+
+                                  </animate>
+                                </stop>
+                                <stop stop-color="#2efbde " offset="100%">
+                                  <animate
+                                    attributeName="stop-color"
+                                    values="#2efbde;  rgba(255,255,255,0); #2efbde"
+                                    fill="freeze"
+
+                                    begin="cardLookDots_4GradientStart.begin + 0.5s"
+                                    dur="1s"
+                                    repeatCount="1"
+                                    id="cardLookDots_4GradientFinish">
+
+                                  </animate>
+                                </stop>
+                              </linearGradient>
+                            </defs>
+
+                            <path
+                              fill="none"
+                              stroke="url(#cardLookDots_4Gradient)"
+                              stroke-width="5"
+                              stroke-dasharray="1, 15"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              opacity="0.9"
+                              vector-effect="non-scaling-stroke"
+                              d="M 12,7  L 12,100">
+                            </path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="steps-card__animation-3 animated invisible">
+                    <img src="img/images/tsp/about-card-3.svg" alt="">
+                    <div class="steps-card__text">
+                      <span>Контактная</span> <br>
+                      <span>информация</span>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+            <div class="card-look__visio">
+
+
+              <div class="card-visio">
+                <div class="card-visio__card-wrap">
+
+
+                  <!--<div class="path-response__wrap path-response__wrap_absolute path-response__wrap_dot-2">-->
+                  <!--<div class="path-response">-->
+                  <!--<div class="path-response__container path-response__container_dot-2">-->
+
+                  <!--</div>-->
+                  <!--</div>-->
+                  <!--</div>-->
+                  <div class="card-visio__light-wrap">
+                    <div class="card-visio__light"></div>
+                  </div>
+                  <div class="card-visio__card-inner">
+
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         class="point point_2"
+                         preserveAspectRatio="xMidYMid">
+                      <defs>
+                        <animate
+                          xlink:href="#dotPoint_2"
+                          attributeName="fill-opacity"
+                          from="0"
+                          to="0"
+                          values="0;  1;  0"
+                          keyTimes="0;  0.5; 1"
+                          dur="1.4s"
+                          begin="0s; cardLookDots_3GradientStart.end"
+                          repeatCount="1"
+                          fill="freeze">
+                        </animate>
+                        <animate
+                          xlink:href="#dotPoint_2"
+                          attributeName="stroke-opacity"
+                          from="0"
+                          to="0"
+                          values="0; 0; 0.4; 0; 0"
+                          keyTimes="0; 0.2; 0.4; 0.75; 1"
+                          dur="1.4s"
+                          begin="0s; cardLookDots_3GradientStart.end"
+                          repeatCount="indefinite"
+                          fill="freeze">
+                        </animate>
+
+                      </defs>
+
+                      <circle id="dotPoint_2"
+                              class="dot-point dot-point_2"
+                              r="10"
+                              cx="-77"
+                              cy="38"
+                              fill="#14e1a8"
+                              stroke="#14e1a8"
+                              stroke-width="12">
+                      </circle>
+                    </svg>
+                    <img src="img/images/tsp/card-round.png" alt="" class="card-visio__card">
+                    <div class="card-visio__card-shadow"></div>
+                  </div>
+
+
+                </div>
+                <div class="card-visio__text-wrap animated">
+                  <div class="card-visio__title">Ваша готовая карта</div>
+                  <div class="card-visio__title-stripe"></div>
+                  <div class="card-visio__subtitle">
+                    со встроенной <br>
+                    программой лояльности
+                  </div>
+                </div>
+                <div class="card-visio__btn-wrap"><a href="#feedbackAnchor" id="getProgram" class="btn-tsp">Заказать
+                  программу
+                  лояльности</a></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsp-section partners">
+    <div class="partners__content">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-xs-offset-2  col-xs-7 col-sm-offset-2  col-sm-7 col-md-offset-2  col-md-7 col-lg-offset-2  col-lg-7 ">
+            <div class="partners__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_partners">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="partnersDots">
+
+                      <defs>
+                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%"
+                                        id="partnersDotsGradient"
+                                        gradientUnits="userSpaceOnUse">
+                          <stop stop-color="rgba(249,181,11, 0.9)"
+                                offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="rgba(249,181,11, 0.9); rgba(255,255,255,0);rgba(255,255,255,0); rgba(249,181,11, 0.9)"
+                              fill="freeze"
+
+                              begin="0s; partnersDotsGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="partnersDotsGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="#742efb " offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#742efb;  rgba(255,255,255,0); #742efb"
+                              fill="freeze"
+
+                              begin="partnersDotsGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="partnersDotsGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        fill="none"
+                        stroke="url(#partnersDotsGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 99 1 L 99 48 L 1 50 L 1 100 ">
+                      </path>
+
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" col-xs-3  col-sm-3 col-md-offset-1 col-md-2 col-lg-offset-1 col-lg-2 ">
+            <div class="partners__partners-all animated invisible">
+              <div class="partners-all">
+                <div class="partners-all__text">Всего в сети:</div>
+                <div class="partners-all__count">1 250</div>
+                <div class="partners-all__small-text">партнеров</div>
+                <div class="carousel-custom__nav-container" id="customNav"></div>
+              </div>
+            </div>
+          </div>
+          <div class=" col-xs-8 col-sm-8 col-md-offset-1  col-md-8 col-lg-offset-1  col-lg-8 ">
+            <div class="h2-title partners__title animated invisible">Наши партнеры</div>
+
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+
+            <div class="partners__carousel">
+              <div class="carousel-custom__shadow-left"></div>
+              <div class="carousel-custom">
+                <div class="owl-carousel">
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="https://clcorp.ru/uploads/57d2dbc0f0141.jpg" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>Grohe</span><br>
+                        <span>Лучшее качество</span><br>
+                        <span>Выгодные цены</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="https://clcorp.ru/uploads/57208a00c978c.png" class="carousel-custom__logo" alt="">
+                      </div>
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>Nike</span> <br>
+                        <span>Lorem ipsum dolor sit amet.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="https://clcorp.ru/uploads/57d6ac76604eb.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>Adidas</span> <br>
+                        <span>make your choice</span>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-custom__item">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <div class="carousel-custom__item-content">
+                      <div class="carousel-custom__logo-wrap">
+                        <img src="img/images/tsp/Logo.png" class="carousel-custom__logo" alt="">
+                      </div>
+
+                      <div class="carousel-custom__item-text">
+                        <hr class="carousel-custom__logo-stripe">
+                        <span>City Life</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="carousel-custom__shadow-right"></div>
+            </div>
+
+          </div>
+          <div class="  col-xs-10  col-sm-10 col-md-offset-1 col-md-8 col-lg-offset-1 col-lg-8 ">
+            <div class="partners__dots-wrap partners__dots-wrap_bottom">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_partners">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="partnersDotsBottom">
+
+                      <defs>
+                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%"
+                                        id="partnersDotsBottomGradient"
+                                        gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#742efb" stop-opacity="0.798431839"
+                                offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#742efb; rgba(255,255,255,0);rgba(255,255,255,0); #742efb"
+                              fill="freeze"
+
+                              begin="0s; partnersDotsBottomGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="partnersDotsBottomGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="rgb(11,229,249)" offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="rgb(11,229,249);  rgba(255,255,255,0); rgb(11,229,249)"
+                              fill="freeze"
+
+                              begin="partnersDotsBottomGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="partnersDotsBottomGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        fill="none"
+                        stroke="url(#partnersDotsBottomGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 99 1 L 99 48 L 7 50 L 7 100 ">
+                      </path>
+
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsp-section profit-people">
+    <div class="profit-people">
+      <!--<div class="profit-people__bg">-->
+      <div class="container">
+        <div class="row">
+          <div class=" col-xs-11 col-sm-11 col-md-offset-1  col-md-11 col-lg-offset-1  col-lg-11 ">
+            <div class="h2-title profit-people__title animated invisible">
+              Выгоды <br>
+              <span class="marked marked_lightgreen">вашего клиента</span>
+            </div>
+          </div>
+          <div class=" col-xs-6 col-sm-6 col-md-offset-1  col-md-6 col-lg-offset-1  col-lg-6 ">
+            <div class="profit-people__list">
+              <ul class="profit-list">
+                <li class="profit-list__dots-wrap">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div class="path-response__container path-response__container_profit-list">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitPeopleDots_1">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitPeopleDots_1Gradient">
+                              <stop stop-color="rgba(11, 229, 249, 0.8)"
+                                    offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                                  fill="freeze"
+
+                                  begin="0s; profitPeopleDots_1GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_1GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="#742efb" offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb;  rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="profitPeopleDots_1GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_1GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitPeopleDots_1Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 10,7  L 10,90">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="profit-list__item profit-list__animation-1 animated invisible">
+                  <div class="profit-list__item-pict-wrap">
+                    <img src="img/images/tsp/icon-1.svg" alt="">
+                  </div>
+                  <div class="profit-list__item-text">
+                                            <span>Скидки у вас <br>
+                                            и наших партнеров</span>
+                  </div>
+                </li>
+                <li class="profit-list__dots-wrap">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div class="path-response__container path-response__container_profit-list">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitPeopleDots_2">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitPeopleDots_2Gradient">
+                              <stop stop-color="rgba(11, 229, 249, 0.8)"
+                                    offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                                  fill="freeze"
+
+                                  begin="0s; profitPeopleDots_2GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_2GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="#742efb" offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb;  rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="profitPeopleDots_2GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_2GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitPeopleDots_2Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 10,7  L 10,90">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="profit-list__item profit-list__animation-2 animated invisible">
+                  <div class="profit-list__item-pict-wrap">
+                    <img src="img/images/tsp/icon-2.svg" alt="">
+                  </div>
+                  <div class="profit-list__item-text">
+                    <span>Ваш фирменный</span> <br>
+                    <span>паттерн</span>
+                  </div>
+                </li>
+                <li class="profit-list__dots-wrap">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div class="path-response__container path-response__container_profit-list">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitPeopleDots_1">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitPeopleDots_3Gradient">
+                              <stop stop-color="rgba(11, 229, 249, 0.8)"
+                                    offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                                  fill="freeze"
+
+                                  begin="0s; profitPeopleDots_3GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_3GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="#742efb" offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb;  rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="profitPeopleDots_3GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitPeopleDots_3GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitPeopleDots_3Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 10,7  L 10,90">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="profit-list__item profit-list__animation-3 animated invisible">
+                  <div class="profit-list__item-pict-wrap">
+                    <img src="img/images/tsp/icon-3.svg" alt="">
+                  </div>
+                  <div class="profit-list__item-text">
+                    <span>Контактная</span> <br>
+                    <span>информация</span>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 profit-people__bg-wrap">
+            <div class="profit-people__bg animated invisible"></div>
+          </div>
+          <div class=" col-xs-7 col-sm-7 col-md-offset-1  col-md-6 col-lg-offset-1  col-lg-6 ">
+            <div class="profit-people__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_profit-people">
+
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="profitPeopleDotsBottom">
+
+                      <defs>
+                        <linearGradient x1="2.15304209%" y1="85.3381889%" x2="97.7944263%"
+                                        y2="29.3510784%" gradientUnits="userSpaceOnUse"
+                                        id="profitPeopleDotsBottomGradient">
+                          <stop stop-color="rgba(11, 229, 249, 0.8)" offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                              fill="freeze"
+
+                              begin="0s; profitPeopleDotsBottomGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="profitPeopleDotsBottomGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="#742efb " offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#742efb;  rgba(255,255,255,0); #742efb"
+                              fill="freeze"
+
+                              begin="profitPeopleDotsBottomGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="profitPeopleDotsBottomGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        fill="none"
+                        stroke="url(#profitPeopleDotsBottomGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 10,1 L 10,50   L 50,50  L99,50 L 99,100">
+                      </path>
+                    </svg>
+
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="xMaxYMid"
+                         class="point point_3"
+                         style="right: -30px; bottom: -30px;">
+                      <defs>
+                        <animate
+                          xlink:href="#dotPoint_3"
+                          attributeName="fill-opacity"
+                          from="0"
+                          to="0"
+                          values="0;  1;  0"
+                          keyTimes="0;  0.5; 1"
+                          dur="1.5s"
+                          begin="0s; profitPeopleDotsBottomGradientFinish.end"
+                          repeatCount="1"
+                          fill="freeze">
+                        </animate>
+                        <animate
+                          xlink:href="#dotPoint_3"
+                          attributeName="stroke-opacity"
+                          from="0"
+                          to="0"
+                          values="0; 0; 0.4; 0; 0"
+                          keyTimes="0; 0.2; 0.4; 0.75; 1"
+                          dur="1.5s"
+                          begin="0s; profitPeopleDotsBottomGradientFinish.end"
+                          repeatCount="indefinite"
+                          fill="freeze">
+                        </animate>
+
+                      </defs>
+                      <circle id="dotPoint_3"
+                              class="dot-point dot-point_3"
+                              r="11"
+                              stroke-width="12"
+                              cx="77"
+                              cy="81"
+                              fill="#14e1a8"
+                              stroke="#14e1a8">
+                      </circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--</div>-->
+    </div>
+  </section>
+
+  <section class="tsp-section profit-you">
+    <div class="profit-you">
+      <div class="container-fluid profit-you__container-fluid">
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="profit-you__bg animated invisible">
+              <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                   xmlns="http://www.w3.org/2000/svg"
+                   xmlns:xlink="http://www.w3.org/1999/xlink"
+                   class="point point_3"
+                   preserveAspectRatio="xMidYMid">
+
+              </svg>
+            </div>
+          </div>
+          <div class="profit-you__animate animated invisible">
+            <div class="col-sm-6 col-md-6 col-lg-6 ">
+              <div class="h2-title profit-you__title">Ваша выгода</div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+              <div class="profit-you__list">
+                <ul class="profit-list">
+                  <li class="profit-list__item profit-list__item_you">
+                    <div
+                      class="profit-list__item-text profit-list__item-text_you">
+                      <span>Теперь вам не надо разрабатывать</span> <br>
+                      <span>собственное приложение для создания</span> <br>
+                      <span>программы лояльности.</span>
+                    </div>
+                  </li>
+                  <li class="profit-list__item profit-list__item_you">
+                    <div
+                      class="profit-list__item-text profit-list__item-text_you">
+                      <span class="marked marked_purple">В личном кабинете вашего заведения</span>
+                      <br>
+                      <span class="marked marked_purple">собрана вся информация</span> <span>об интересах</span>
+                      <br>
+                      <span>ваших клиентов.</span>
+                    </div>
+                  </li>
+                  <li class="profit-list__item profit-list__item_you">
+                    <div
+                      class="profit-list__item-text profit-list__item-text_you">
+                                            <span>
+                                                <a class="link-tsp" id="specialMaster" href="#feedbackAnchor">Наш специалист подключит <br>
+                                            вас к экосистеме</a>
+                                            </span>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--</div>-->
+      <div class="container">
+        <div class="row">
+          <div class=" col-xs-12 col-sm-12 col-md-offset-2 col-md-10 col-lg-offset-2 col-lg-10 ">
+            <div class="profit-you__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_profit-you">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="profitYouDots">
+
+                      <defs>
+                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%"
+                                        id="profitYouDotsGradient"
+                                        gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#742efb" stop-opacity="0.798431839"
+                                offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#742efb; rgba(255,255,255,0);rgba(255,255,255,0); #742efb"
+                              fill="freeze"
+
+                              begin="0s; profitYouDotsGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="profitYouDotsGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="rgba(11,229,249,0.8)" offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="rgba(11,229,249,0.8);  rgba(255,255,255,0); rgba(11,229,249,0.8)"
+                              fill="freeze"
+
+                              begin="profitYouDotsGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="profitYouDotsGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        fill="none"
+                        stroke="url(#profitYouDotsGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 60 1 L 60 48 L 8 50 L 8 100 ">
+                      </path>
+
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" col-xs-12 col-sm-12 col-md-offset-2 col-md-10 col-lg-offset-2 col-lg-10 ">
+            <div class="profit-you__steps">
+              <ul class="wide-list">
+                <li class="wide-list__item wide-list__item-animation-1 animated invisible">
+
+                  <div class="wide-list__item-number">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <span class="wide-list__number">1</span>
+                  </div>
+                  <div class="wide-list__item-content">
+                    <img src="img/images/tsp/profit-you-step-1.svg"
+                         class="wide-list__item-picture"/>
+                    <div class="wide-list__item-text">
+                      <span>Удержание клиентов с помощью</span> <br>
+                      <span>индивидуальных программ лояльности</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="wide-list__dots-wrap">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div class="path-response__container path-response__container_wide-list">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitYouListDots_1">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitYouListDots_1Gradient">
+                              <stop stop-color="rgba(11, 229, 249, 0.8)"
+                                    offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                                  fill="freeze"
+
+                                  begin="0s; profitYouListDots_1GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_1GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="#742efb" offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb;  rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="profitYouListDots_1GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_1GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitYouListDots_1Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 8,8  L 8,100">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="wide-list__item wide-list__item-animation-2 animated invisible">
+                  <div class="wide-list__item-number">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <span class="wide-list__number">2</span>
+                  </div>
+                  <div class="wide-list__item-content">
+                    <img src="img/images/tsp/profit-you-step-2.svg"
+                         class="wide-list__item-picture"/>
+                    <div class="wide-list__item-text">
+                      <span>Привлечение новых клиентов через</span> <br>
+                      <span>нашу платформу и рекомендации</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="wide-list__dots-wrap">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div class="path-response__container path-response__container_wide-list">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitYouListDots_2">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitYouListDots_2Gradient">
+                              <stop stop-color="rgba(249, 11, 148, 0.8)"
+                                    offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(11, 229, 249, 0.8); rgba(255,255,255,0);rgba(255,255,255,0); rgba(11, 229, 249, 0.8)"
+                                  fill="freeze"
+
+                                  begin="0s; profitYouListDots_2GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_2GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="#742efb" offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb;  rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="profitYouListDots_2GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_2GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitYouListDots_2Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 8,8  L 8,100">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="wide-list__item wide-list__item-animation-3 animated invisible">
+                  <div class="wide-list__item-number">
+                    <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                    <span class="wide-list__number">3</span>
+                  </div>
+                  <div class="wide-list__item-content">
+                    <img src="img/images/tsp/profit-you-step-3.svg"
+                         class="wide-list__item-picture"/>
+                    <div class="wide-list__item-text">
+                      <span>Увеличение среднего чека</span> <br>
+                      <span>благодаря постоянным бонусам</span><br>
+                      <span>программы лояльности</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="wide-list__dots-wrap wide-list__dots-wrap_high">
+                  <div class="path-response__wrap">
+                    <div class="path-response">
+                      <div
+                        class="path-response__container path-response__container_wide-list_high">
+                        <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                             xmlns="http://www.w3.org/2000/svg"
+                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                             preserveAspectRatio="none"
+                             id="profitYouListDots_3">
+
+                          <defs>
+                            <linearGradient x1="0%" y1="0%" x2="0%"
+                                            y2="100%" gradientUnits="userSpaceOnUse"
+                                            id="profitYouListDots_3Gradient">
+                              <stop stop-color="#742efb" offset="0%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="#742efb; rgba(255,255,255,0);rgba(255,255,255,0); #742efb"
+                                  fill="freeze"
+
+                                  begin="0s; profitYouListDots_3GradientFinish.end"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_3GradientStart">
+
+                                </animate>
+                              </stop>
+                              <stop stop-color="rgba(249, 11, 148, 0.8)"
+                                    offset="100%">
+                                <animate
+                                  attributeName="stop-color"
+                                  values="rgba(249, 11, 148, 0.8);  rgba(255,255,255,0); rgba(249, 11, 148, 0.8)"
+                                  fill="freeze"
+
+                                  begin="profitYouListDots_3GradientStart.begin + 0.5s"
+                                  dur="1s"
+                                  repeatCount="1"
+                                  id="profitYouListDots_3GradientFinish">
+
+                                </animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            fill="none"
+                            stroke="url(#profitYouListDots_3Gradient)"
+                            stroke-width="5"
+                            stroke-dasharray="1, 15"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            opacity="0.9"
+                            vector-effect="non-scaling-stroke"
+                            d="M 8,8  L 8,100">
+                          </path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsp-section card-ad">
+    <div class="card-ad__content">
+      <div class="container">
+        <div class="row">
+          <div class=" col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-1 col-lg-10 ">
+            <div class="card-ad__top-animation  animated invisible">
+              <div class="h3-title card-ad__title"><span class="marked marked_lightgreen">Карточка вашего заведения</span>
+                <br>
+                появляется на сайте City Life
+              </div>
+              <div class="card-ad__description"><span
+                class="marked marked_lightgreen">Вы можете выбрать</span> специальное размещение своего
+                <br>
+                заведения так, чтобы больше клиентов увидели ее.
+              </div>
+
+              <div class="card-ad__view">
+                <img class="card-ad__demo-picture card-ad__demo-picture_1"
+                     src="img/images/tsp/card-1.svg" alt="">
+                <img class="card-ad__demo-picture card-ad__demo-picture_2"
+                     src="img/images/tsp/card-2.svg" alt="">
+                <img class="card-ad__demo-picture card-ad__demo-picture_wide card-ad__demo-picture_3"
+                     src="img/images/tsp/card-3.svg" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-xs-offset-1 col-xs-6 col-sm-offset-1 col-sm-6 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 ">
+
+            <div class="card-ad__components animated invisible">
+              <div class="h4-title card-components__title">Стандартная карточка</div>
+              <ul class="card-components">
+                <li class="card-components__item card-components__item_circle">
+                  <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                  <div class="card-components__img-wrap">
+                    <div class="card-components__img card-components__img_circle"></div>
+                  </div>
+                  <div class="card-components__text">Ваш логотип</div>
+                </li>
+                <li class="card-components__item">
+                  <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                  <div class="card-components__img-wrap">
+                    <div class="card-components__img card-components__img_square"></div>
+                  </div>
+
+                  <div class="card-components__text">Изображене вашего заведения</div>
+                </li>
+                <li class="card-components__item">
+                  <img src="img/images/tsp/vertical-fix.jpg" alt="" class="vertical-fix">
+                  <div class="card-components__img-wrap">
+                    <div class="card-components__img"></div>
+                  </div>
+                  <div class="card-components__text">Название вашего заведения</div>
+                </li>
+              </ul>
+            </div>
+
+            <a href="" class="link-tsp card-ad__link" data-toggle="modal" data-target="#myModal">Внутренняя страница карточки</a>
+
+
+
+          </div>
+          <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
+            <div class="card-ad__card-full-wrap">
+              <img class="card-ad__card-full animated invisible" src="img/images/tsp/card-full.png" alt="">
+            </div>
+          </div>
+
+          <div
+            class="col-xs-offset-5 col-xs-6 col-sm-offset-5 col-sm-6 col-md-offset-5 col-md-5 col-lg-offset-5 col-lg-5 ">
+            <div class="card-ad__dots-wrap">
+              <div class="path-response__wrap">
+                <div class="path-response">
+                  <div class="path-response__container path-response__container_card-ad">
+                    <svg version="1.1" width="100%" height="100%" viewBox="0 0 100 100"
+                         xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink"
+                         preserveAspectRatio="none"
+                         id="cardAdDots">
+
+                      <defs>
+                        <linearGradient x1="100%" y1="0%" x2="0%" y2="100%"
+                                        id="cardAdDotsGradient" gradientUnits="userSpaceOnUse">
+                          <stop stop-color="#ff05f9" stop-opacity="0.798431839"
+                                offset="0%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#ff05f9;  rgba(255,255,255,0); #ff05f9"
+                              fill="freeze"
+
+                              begin="0s; cardAdDotsGradientFinish.end"
+                              dur="1s"
+                              repeatCount="1"
+                              id="cardAdDotsGradientStart">
+
+                            </animate>
+                          </stop>
+                          <stop stop-color="#03ffed" offset="100%">
+                            <animate
+                              attributeName="stop-color"
+                              values="#03ffed;   rgba(255,255,255,0); #03ffed"
+                              fill="freeze"
+
+                              begin="cardAdDotsGradientStart.begin + 0.5s"
+                              dur="1s"
+                              repeatCount="1"
+                              id="cardAdDotsGradientFinish">
+
+                            </animate>
+                          </stop>
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        fill="none"
+                        stroke="url(#cardAdDotsGradient)"
+                        stroke-width="5"
+                        stroke-dasharray="1, 15"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        opacity="0.9"
+                        vector-effect="non-scaling-stroke"
+                        d="M 90 1 L 90 48 L 1 50 L 1 100">
+                      </path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="tsp-section footer">
+    <div class="footer__content">
+
+      <div class="h3-title footer__title" id="feedbackAnchor">Свяжитесь с нами, чтобы узнать,<br>
+        как создать новую <br>
+        программу лояльности
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="footer__feedback-form">
+            <div class="feedback-form">
+              <form action="">
+                <div
+                  class="col-xs-offset-1 col-xs-5 col-sm-offset-1 col-sm-5 col-md-offset-1 col-md-5 col-lg-offset-1 col-lg-5 ">
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="text" class="feedback-form__input" placeholder=" "
+                             name="tspName" id="tspName" required>
+                      <span class="feedback-form__placeholder">Имя</span>
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="text" class="feedback-form__input" placeholder=" "
+                             name="tspSurname" id="tspSurname" required>
+                      <span class="feedback-form__placeholder">Фамилия</span>
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="email" class="feedback-form__input" placeholder=" "
+                             name="tspEmail" id="tspEmail" required>
+                      <span class="feedback-form__placeholder">Email</span>
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 ">
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="text" class="feedback-form__input" placeholder=" "
+                             name="tspCompanyName" id="tspCompanyName" required>
+                      <span class="feedback-form__placeholder">Название компании</span>
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="text" class="feedback-form__input" placeholder=" "
+                             name="tspCompanyField" id="tspCompanyField" required>
+                      <span class="feedback-form__placeholder">Сфера деятельност компании</span>
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                  <div class="feedback-form__input-block">
+                    <div class="feedback-form__input-wrap">
+                      <input type="submit" class="btn-tsp btn-tsp_form" value="Отправить">
+                    </div>
+                    <div class="feedback-form__error-field"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<img src="img/images/tsp/top-scroll-green.svg" id="scrollTop" class="scroll-top" alt="">
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Заголовок</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-6">
+              <p>Описание</p>
+            </div>
+            <div class="col-xs-6">
+              <img src="img/images/tsp/card-full.png" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="lib/jquery/dist/jquery.js" defer></script>
+<script src="lib-static-js/bootstrap-custom-1240/js/bootstrap.min.js" defer></script>
+<script src="lib/owl.carousel/dist/owl.carousel.js" defer></script>
+<!--<script src="lib-static-js/tsp-carousel.js" defer></script>&lt;!&ndash;custom from https://github.com/jason-engage/awesome-media-carousel/edit/master/owl.carousel.custom.js&ndash;&gt;-->
+<script src="js/tsp.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+img.vertical-fix {
+  display: inline!important;
+  width: 0!important;
+  height: 100% !important;
+  font-size: 0!important;
+  opacity: 0!important;
+}
+/*centring*/
+.ch {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.cv {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.cvh {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  -o-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.centered-wrapper {
+  display: table;
+  table-layout: fixed;
+}
+/*links*/
+/*text*/
+/*border radius*/
+/*bg-decoration*/
+/*animation*/
+/*filter blur*/
+.btn-tsp {
+  display: inline-block;
+  border-radius: 100px;
+  border: solid 1px rgba(255, 255, 255, 0.3);
+  padding: 26px 33px 24px 35px;
+  font-family: GothamReg, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn-tsp:hover {
+  background-color: #ffffff;
+  color: #7f8caf;
+  text-decoration: none;
+}
+.btn-tsp__wrapper {
+  margin-top: 60px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.btn-tsp_form {
+  width: 100%;
+  padding: 28px 35px 24px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  background-color: #14e1a8;
+  box-shadow: 0 30px 60px 0 rgba(112, 63, 168, 0.77);
+}
+.btn-tsp_form:hover {
+  box-shadow: 0 15px 34px 0 rgba(18, 161, 120, 0.39);
+}
